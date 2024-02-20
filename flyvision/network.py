@@ -495,10 +495,10 @@ class Network(nn.Module):
         batch_size, n_frames = movie_input.shape[:2]
         if initial_state == "auto":
             initial_state = self.steady_state(1.0, dt, batch_size)
-        # with simulation(self):
-        #     assert self.training == False and all(
-        #         not p.requires_grad for p in self.parameters()
-        #     )
+        with simulation(self):
+            assert self.training == False and all(
+                not p.requires_grad for p in self.parameters()
+            )
         self.stimulus.zero(batch_size, n_frames)
         self.stimulus.add_input(movie_input)
         return self.forward(self.stimulus(), dt, initial_state, as_states)

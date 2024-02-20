@@ -7,11 +7,11 @@ from contextlib import contextmanager
 def simulation(network):
     """Context manager to turn off training mode and require_grad for a network."""
     _training = network.training
-    network.training = False
+    network.training = True
     params_require_grad = {}
     for name, p in network.named_parameters():
         params_require_grad[name] = p.requires_grad
-        p.requires_grad = False
+        p.requires_grad = True
     try:
         yield
     finally:
