@@ -3,6 +3,22 @@ from dataclasses import dataclass
 from contextlib import contextmanager
 
 
+# @contextmanager
+# def simulation(network):
+#     """Context manager to turn off training mode and require_grad for a network."""
+#     _training = network.training
+#     network.training = False
+#     params_require_grad = {}
+#     for name, p in network.named_parameters():
+#         params_require_grad[name] = p.requires_grad
+#         p.requires_grad = False
+#     try:
+#         yield
+#     finally:
+#         network.training = _training
+#         for name, p in network.named_parameters():
+#             p.requires_grad = params_require_grad[name]
+
 @contextmanager
 def simulation(network):
     """Context manager to turn off training mode and require_grad for a network."""
