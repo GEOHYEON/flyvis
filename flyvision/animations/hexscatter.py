@@ -135,6 +135,8 @@ class HexScatter(Animation):
             self.v,
             values,
             fig=self.fig,
+            vmin=vmin,
+            vmax=vmax,
             midpoint=None,
             scalarmapper=scalarmapper,
             norm=norm,

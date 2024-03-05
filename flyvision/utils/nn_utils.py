@@ -21,7 +21,7 @@ from contextlib import contextmanager
 
 @contextmanager
 def simulation(network):
-    """Context manager to turn off training mode and require_grad for a network."""
+    """Context manager to turn on training mode and require_grad for a network."""
     _training = network.training
     network.training = True
     params_require_grad = {}
