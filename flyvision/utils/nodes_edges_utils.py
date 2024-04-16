@@ -20,6 +20,8 @@ def oder_node_type_list(
         r"Mi\d{1,2}",
         r"T\d{1,2}.*",
         r"Tm.*\d{1,2}.*",
+        r"LPi.*",
+        r"LPLC2"
     ],
 ) -> Tuple[List, List]:
     """Orders a list of node types by the regular expressions defined in groups.

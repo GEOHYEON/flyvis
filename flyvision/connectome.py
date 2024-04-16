@@ -420,6 +420,8 @@ class ConnectomeView:
             r"Mi\d{1,2}",
             r"T\d{1,2}.*",
             r"Tm.*\d{1,2}.*",
+            r"LPi.*",
+            r"LPLC2"
         ],
     ):
         self.connectome = connectome
